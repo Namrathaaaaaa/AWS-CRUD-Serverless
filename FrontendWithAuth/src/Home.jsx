@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import "./App.css";
 import reactImg from "./assets/react.svg";
 
-const App = () => {
+const Home = () => {
   const [coffees, setCoffees] = useState([]);
   const [coffeeId, setCoffeeId] = useState("");
   const [name, setName] = useState("");
@@ -56,4 +56,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default Home;

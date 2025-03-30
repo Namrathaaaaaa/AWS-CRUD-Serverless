@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { getCoffee, updateCoffee, deleteCoffee } from "./utils/apis";
 import reactImg from "./assets/react.svg";
 
-const Coffee = () => {
+const ItemDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const [coffee, setCoffee] = useState(null);
@@ -53,4 +53,4 @@ const Coffee = () => {
     );
 };
 
-export default Coffee;
+export default ItemDetails;
