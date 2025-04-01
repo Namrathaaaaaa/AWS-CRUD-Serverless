@@ -1,8 +1,8 @@
-const { docClient, GetCommand, ScanCommand, createResponse } = require("/opt/nodejs/utils"); // Import from Layer
+import { docClient, GetCommand, ScanCommand, createResponse } from '/opt/nodejs/utils'; // Import from Layer
 
 const tableName = process.env.tableName || "mytestCoffeeTable";
 
-const getCoffee = async (event) => {
+export const getCoffee = async (event) => {
     const { pathParameters } = event;
     const { id } = pathParameters || {};
 
@@ -30,5 +30,3 @@ const getCoffee = async (event) => {
     }
 
 }
-
-module.exports = { getCoffee };

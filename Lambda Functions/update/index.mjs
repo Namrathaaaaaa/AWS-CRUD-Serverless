@@ -1,5 +1,5 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, UpdateCommand } = require("@aws-sdk/lib-dynamodb");
+import { DynamoDBDocumentClient, UpdateCommand } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
@@ -15,7 +15,7 @@ const createResponse = (statusCode, body) => {
     };
 };
 
-const updateCoffee = async (event) => {
+export const updateCoffee = async (event) => {
     const { pathParameters, body } = event;
 
     const coffeeId = pathParameters?.id;
@@ -64,5 +64,3 @@ const updateCoffee = async (event) => {
         });
     }
 }
-
-module.exports = { updateCoffee };

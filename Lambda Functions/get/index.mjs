@@ -1,5 +1,5 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, GetCommand, ScanCommand } = require("@aws-sdk/lib-dynamodb");
+import { DynamoDBDocumentClient, GetCommand, ScanCommand } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
@@ -15,7 +15,7 @@ const createResponse = (statusCode, body) => {
     };
 };
 
-const getCoffee = async (event) => {
+export const getCoffee = async (event) => {
     const { pathParameters } = event;
     const { id } = pathParameters || {};
 
@@ -43,5 +43,3 @@ const getCoffee = async (event) => {
     }
 
 }
-
-module.exports = { getCoffee };

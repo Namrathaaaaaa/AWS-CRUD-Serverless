@@ -1,5 +1,5 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, DeleteCommand } = require("@aws-sdk/lib-dynamodb");
+import { DynamoDBDocumentClient, DeleteCommand } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
@@ -15,7 +15,7 @@ const createResponse = (statusCode, body) => {
     };
 };
 
-const deleteCoffee = async (event) => {
+export const deleteCoffee = async (event) => {
     const { pathParameters } = event;
     const coffeeId = pathParameters?.id;
     if (!coffeeId)
@@ -43,5 +43,3 @@ const deleteCoffee = async (event) => {
         });
     }
 }
-
-module.exports = { deleteCoffee };

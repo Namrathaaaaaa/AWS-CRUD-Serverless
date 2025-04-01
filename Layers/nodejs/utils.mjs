@@ -1,5 +1,12 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, ScanCommand, GetCommand, PutCommand, UpdateCommand, DeleteCommand } = require("@aws-sdk/lib-dynamodb");
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
+import {
+    DynamoDBDocumentClient,
+    ScanCommand,
+    GetCommand,
+    PutCommand,
+    UpdateCommand,
+    DeleteCommand
+} from "@aws-sdk/lib-dynamodb";
 
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
@@ -12,7 +19,7 @@ const createResponse = (statusCode, body) => {
     };
 };
 
-module.exports = {
+export {
     docClient,
     createResponse,
     ScanCommand,

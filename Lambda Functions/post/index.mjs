@@ -1,5 +1,5 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, PutCommand } = require("@aws-sdk/lib-dynamodb");
+import { DynamoDBDocumentClient, PutCommand } from "@aws-sdk/lib-dynamodb";
+import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
@@ -15,7 +15,7 @@ const createResponse = (statusCode, body) => {
     };
 };
 
-const createCoffee = async (event) => {
+export const createCoffee = async (event) => {
     const { body } = event;
     const { coffeeId, name, price, available } = JSON.parse(body || "{}");
 
@@ -52,5 +52,3 @@ const createCoffee = async (event) => {
     }
 
 }
-
-module.exports = { createCoffee };

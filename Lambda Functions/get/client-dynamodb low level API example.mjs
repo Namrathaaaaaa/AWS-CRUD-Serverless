@@ -1,4 +1,4 @@
-const { DynamoDBClient, GetItemCommand } = require("@aws-sdk/client-dynamodb"); // CommonJS import
+import { DynamoDBClient, GetItemCommand } from "@aws-sdk/client-dynamodb"; // ESM import
 
 const config = {
     region: "us-east-1",
@@ -6,7 +6,7 @@ const config = {
 
 const client = new DynamoDBClient(config);
 
-const getCoffee = async (event) => {
+export const getCoffee = async (event) => {
 
     const coffeeId = "myCoff101";
 
@@ -25,5 +25,3 @@ const getCoffee = async (event) => {
     console.log(response);
     return response;
 }
-
-module.exports = { getCoffee };
