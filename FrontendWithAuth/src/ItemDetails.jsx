@@ -32,7 +32,7 @@ const ItemDetails = () => {
             <h1>{editMode ? "Edit Coffee" : coffee.name}</h1>
             {editMode ? (
                 <>
-                    <input className="styled-input" value={coffee.coffeeId} onChange={e => setCoffee({ ...coffee, coffeeId: e.target.value })} />
+                    <input className="styled-input" value={coffee.coffeeId} />
                     <input className="styled-input" value={coffee.name} onChange={e => setCoffee({ ...coffee, name: e.target.value })} />
                     <input className="styled-input" type="number" value={coffee.price} onChange={e => setCoffee({ ...coffee, price: Number(e.target.value) })} />
                     <label>
