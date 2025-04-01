@@ -1,21 +1,8 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, UpdateCommand } = require("@aws-sdk/lib-dynamodb");
-
-const client = new DynamoDBClient({});
-const docClient = DynamoDBDocumentClient.from(client);
+import { docClient, UpdateCommand, createResponse } from '/opt/nodejs/utils.mjs'; // Import from Layer
 
 const tableName = process.env.tableName || "mytestCoffeeTable";
 
-const createResponse = (statusCode, body) => {
-    const responseBody = JSON.stringify(body);
-    return {
-        statusCode,
-        headers: { "Content-Type": "application/json" },
-        body: responseBody,
-    };
-};
-
-const updateCoffee = async (event) => {
+export const updateCoffee = async (event) => {
     const { pathParameters, body } = event;
 
     const coffeeId = pathParameters?.id;
@@ -64,5 +51,3 @@ const updateCoffee = async (event) => {
         });
     }
 }
-
-module.exports = { updateCoffee };

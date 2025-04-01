@@ -1,19 +1,6 @@
-const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-const { DynamoDBDocumentClient, PutCommand } = require("@aws-sdk/lib-dynamodb");
-
-const client = new DynamoDBClient({});
-const docClient = DynamoDBDocumentClient.from(client);
+import { docClient, PutCommand, createResponse } from '/opt/nodejs/utils'; // Import from Layer
 
 const tableName = process.env.tableName || "mytestCoffeeTable";
-
-const createResponse = (statusCode, body) => {
-    const responseBody = JSON.stringify(body);
-    return {
-        statusCode,
-        headers: { "Content-Type": "application/json" },
-        body: responseBody,
-    };
-};
 
 const createCoffee = async (event) => {
     const { body } = event;

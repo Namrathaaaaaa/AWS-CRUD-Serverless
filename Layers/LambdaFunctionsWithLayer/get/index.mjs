@@ -1,4 +1,4 @@
-import { docClient, GetCommand, ScanCommand, createResponse } from '/opt/nodejs/utils'; // Import from Layer
+import { docClient, GetCommand, ScanCommand, createResponse } from '/opt/nodejs/utils.mjs'; // Import from Layer
 
 const tableName = process.env.tableName || "mytestCoffeeTable";
 
