@@ -11,7 +11,16 @@
                 "dynamodb:Scan",
                 "dynamodb:UpdateItem"
             ],
-            "Resource": "arn:aws:dynamodb::myTable"
+            "Resource": "arn:aws:dynamodb::<DYNAMODB_TABLE_NAME>"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "*"
         }
     ]
 }
