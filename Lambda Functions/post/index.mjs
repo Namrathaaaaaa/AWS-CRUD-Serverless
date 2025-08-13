@@ -4,7 +4,7 @@ import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 const client = new DynamoDBClient({});
 const docClient = DynamoDBDocumentClient.from(client);
 
-const tableName = process.env.tableName || "mytestCoffeeTable";
+const tableName = process.env.tableName || "CoffeeShop";
 
 const createResponse = (statusCode, body) => {
     const responseBody = JSON.stringify(body);

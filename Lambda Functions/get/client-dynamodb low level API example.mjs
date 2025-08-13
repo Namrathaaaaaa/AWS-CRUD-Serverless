@@ -1,17 +1,17 @@
 import { DynamoDBClient, GetItemCommand } from "@aws-sdk/client-dynamodb"; // ESM import
 
 const config = {
-    region: "us-east-1",
+    region: "ap-south-1",
 };
 
 const client = new DynamoDBClient(config);
 
 export const getCoffee = async (event) => {
 
-    const coffeeId = "myCoff101";
+    const coffeeId = "c123";
 
     const input = {
-        TableName: "mytestCoffeeTable",
+        TableName: "CoffeeShop",
         Key: {
             coffeeId: {
                 S: coffeeId,
