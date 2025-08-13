@@ -1,6 +1,6 @@
 import { docClient, PutCommand, createResponse } from '/opt/nodejs/utils.mjs'; // Import from Layer
 
-const tableName = process.env.tableName || "mytestCoffeeTable";
+const tableName = process.env.tableName || "CoffeeShop";
 
 export const createCoffee = async (event) => {
     const { body } = event;

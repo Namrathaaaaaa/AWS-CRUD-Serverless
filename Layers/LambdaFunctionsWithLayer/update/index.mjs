@@ -1,6 +1,6 @@
 import { docClient, UpdateCommand, createResponse } from '/opt/nodejs/utils.mjs'; // Import from Layer
 
-const tableName = process.env.tableName || "mytestCoffeeTable";
+const tableName = process.env.tableName || "CoffeeShop";
 
 export const updateCoffee = async (event) => {
     const { pathParameters, body } = event;

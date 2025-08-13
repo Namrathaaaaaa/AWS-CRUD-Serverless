@@ -1,6 +1,6 @@
 import { docClient, DeleteCommand, createResponse } from '/opt/nodejs/utils.mjs'; // Import from Layer
 
-const tableName = process.env.tableName || "mytestCoffeeTable";
+const tableName = process.env.tableName || "CoffeeShop";
 
 export const deleteCoffee = async (event) => {
     const { pathParameters } = event;
