@@ -11,9 +11,9 @@ function App() {
 
 
     const signOutRedirect = () => {
-        const clientId = "";
-        const logoutUri = "";
-        const cognitoDomain = "";
+        const clientId = "3i4kgch0ttgt2e7gln4h8lfu9l";
+        const logoutUri = "https://d1eer3ni80c7v4.cloudfront.net";
+        const cognitoDomain = "https://ap-south-1tmaca2whe.auth.ap-south-1.amazoncognito.com";
         deleteAccessToken();
         window.location.href = `${cognitoDomain}/logout?client_id=${clientId}&logout_uri=${encodeURIComponent(logoutUri)}`;
     };
